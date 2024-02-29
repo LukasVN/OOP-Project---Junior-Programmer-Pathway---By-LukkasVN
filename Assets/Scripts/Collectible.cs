@@ -7,6 +7,7 @@ public class Collectible : MonoBehaviour
     protected virtual void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
             Collect();
+            Destroy(gameObject);
         }
     }
 

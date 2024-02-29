@@ -8,7 +8,7 @@ public class Interactable : MonoBehaviour
 
     protected virtual void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F)){
+        if(Input.GetKeyDown(KeyCode.F) && onInteractRange){
             Interact();
         }
     }
@@ -18,10 +18,14 @@ public class Interactable : MonoBehaviour
     }
 
     protected virtual void OnTriggerEnter(Collider other) {
-        onInteractRange = true;
+        if(other.CompareTag("Player")){
+            onInteractRange = true;
+        }
     }
     protected virtual void OnTriggerExit(Collider other) {
-        onInteractRange = false;
+        if(other.CompareTag("Player")){
+            onInteractRange = false;
+        }
     }
     
 }
