@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
     private float jumpForce = 10f;
-    private float moveSpeed = 8f;
+    private float moveSpeed = 10f;
     private float gravity = 2.5f;
     private bool IsJumping;
     private CharacterController characterController;
@@ -20,10 +20,18 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if(Input.GetKeyDown(KeyCode.Space)) {
             StartJumpingAnimation();
             Jump();
-        }   
+        } 
+        if(Input.GetKey(KeyCode.LeftShift)){
+            moveSpeed = 16f;
+            animator.speed = 1.3f;
+        }  
+        else{
+            moveSpeed = 10f;
+            animator.speed = 1f;
+        }
     }
     
     private void FixedUpdate() {
@@ -73,8 +81,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void ApplyGravity(){
-    Vector3 gravityVector = new Vector3(0f, -gravity * Time.deltaTime, 0f);
-    characterController.Move(gravityVector);
+        Vector3 gravityVector = new Vector3(0f, -gravity * Time.deltaTime, 0f);
+        characterController.Move(gravityVector);
     }
 
     private void StartJumpingAnimation(){

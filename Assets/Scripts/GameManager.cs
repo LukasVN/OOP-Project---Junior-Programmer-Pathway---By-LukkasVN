@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int targetFPS = 60;
+    public int coinCounter {get; set;}
+    public int targetFPS = 144;
 
     void Start()
     {
