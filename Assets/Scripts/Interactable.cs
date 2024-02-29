@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    protected bool onInteractRange = false;
+
+    protected virtual void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.F)){
+            Interact();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected virtual void Interact(){
+        Debug.Log("Interaction");
     }
+
+    protected virtual void OnTriggerEnter(Collider other) {
+        onInteractRange = true;
+    }
+    protected virtual void OnTriggerExit(Collider other) {
+        onInteractRange = false;
+    }
+    
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 
+//Not the best PlayerMovement script, made it in a rush.
 public class PlayerMovement : MonoBehaviour
 {
     private Animator animator;
@@ -25,12 +26,10 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         } 
         if(Input.GetKey(KeyCode.LeftShift)){
-            moveSpeed = 16f;
-            animator.speed = 1.3f;
+            SetPlayerSpeed(16f,1.3f);
         }  
         else{
-            moveSpeed = 10f;
-            animator.speed = 1f;
+            SetPlayerSpeed();
         }
     }
     
@@ -87,15 +86,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartJumpingAnimation(){
         IsJumping = true;
-        if(animator.GetBool("IsJumping") != true){
+        if(!animator.GetBool("IsJumping")){
             animator.SetBool("IsJumping", true);
         }
     }
 
     private void EndJumpingAnimation(){
         IsJumping = false;
-        if(animator.GetBool("IsJumping") != false){
+        if(animator.GetBool("IsJumping")){
             animator.SetBool("IsJumping", false);
         }
+    }
+
+    private void SetPlayerSpeed(){
+        moveSpeed = 10f;
+        animator.speed = 1f;
+    }
+
+    private void SetPlayerSpeed(float newSpeed, float newAnimatorSpeed){
+        moveSpeed = newSpeed;
+        animator.speed = newAnimatorSpeed;
     }
 }

@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    protected virtual void OnTriggerEnter(Collider other) {
+        if(other.CompareTag("Player")){
+            Collect();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected virtual void Collect(){
+        Debug.Log("Collected!");
     }
 }
