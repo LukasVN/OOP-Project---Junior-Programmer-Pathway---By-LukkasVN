@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public TextMeshProUGUI coinsText;
+    //ENCAPSULATION
     public int coinCounter {get; set;}
     public int targetFPS = 144;
 
