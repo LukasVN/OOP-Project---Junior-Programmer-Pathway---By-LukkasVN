@@ -21,30 +21,30 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Space)) {
-            StartJumpingAnimation();
-            Jump();
+            StartJumpingAnimation(); //ABSTRACTION
+            Jump(); //ABSTRACTION
         } 
         if(Input.GetKey(KeyCode.LeftShift)){
-            SetPlayerSpeed(16f,1.3f);
+            SetPlayerSpeed(16f,1.3f); //ABSTRACTION
         }  
         else{
-            SetPlayerSpeed();
+            SetPlayerSpeed(); //ABSTRACTION
         }
     }
     
     private void FixedUpdate() {
         if(IsJumping){
-            Jump();
+            Jump(); //ABSTRACTION
         }
-        MovePlayer();
+        MovePlayer(); //ABSTRACTION
     }
 
     private void LateUpdate() {
         if(characterController.isGrounded){
-            EndJumpingAnimation();
+            EndJumpingAnimation(); //ABSTRACTION
         }
         else{
-            ApplyGravity();
+            ApplyGravity(); //ABSTRACTION
         }
     }
 
