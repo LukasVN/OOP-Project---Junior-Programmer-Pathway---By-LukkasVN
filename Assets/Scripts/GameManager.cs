@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public TextMeshProUGUI coinsText;
     public int coinCounter {get; set;}
     public int targetFPS = 144;
 
@@ -18,4 +20,8 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = targetFPS;
     }
 
+    public void addCoin(){
+        coinCounter++;
+        coinsText.text = "Coins: "+coinCounter+" / 10";
+    }
 }

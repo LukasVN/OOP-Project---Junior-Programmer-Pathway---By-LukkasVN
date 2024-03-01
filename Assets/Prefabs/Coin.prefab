@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8457079441697043412}
   - component: {fileID: 2703565444084153421}
   - component: {fileID: 1750715624356382875}
+  - component: {fileID: 3566537889218569910}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -168,3 +169,15 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &3566537889218569910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8666338203339791983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e001fb3bdeb057c49878b4bfac8e61b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

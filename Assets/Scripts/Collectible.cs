@@ -11,7 +11,7 @@ public class Collectible : MonoBehaviour
         }
     }
 
-    protected virtual void Collect(){
+    public virtual void Collect(){
         Debug.Log("Collected!");
     }
 }
