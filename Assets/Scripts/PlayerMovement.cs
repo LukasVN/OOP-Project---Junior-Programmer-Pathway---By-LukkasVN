@@ -97,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //POLYMORFISM
     private void SetPlayerSpeed(){
         moveSpeed = 10f;
         animator.speed = 1f;
